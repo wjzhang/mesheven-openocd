@@ -213,6 +213,18 @@ static void add_default_dirs(void)
 			free(path);
 		}
 	}
+    
+	path = alloc_printf("%s/%s", exepath,  "/../share/openocd/site");
+	if (path) {
+		add_script_search_dir(path);
+		free(path);
+	}
+
+	path = alloc_printf("%s/%s", exepath,  "/../share/openocd/scripts");
+	if (path) {
+		add_script_search_dir(path);
+		free(path);
+	}    
 #endif
 
 	path = alloc_printf("%s/%s/%s", exepath, bin2data, "site");
